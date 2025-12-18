@@ -11,7 +11,7 @@ const timeElement = document.querySelector(".time");
 
 let highScore = localStorage.getItem("highScore") || 0;
 let score = 0;
-let time = 00-00;
+let time = "00-00";
 
 highScoreElement.innerText = highScore;
 
@@ -121,7 +121,7 @@ restartButton.addEventListener("click", restartGame);
 
 function restartGame() {
     score = 0;
-    time = 00-00;
+    time = "00-00";
     scoreElement.innerText = score;
     timeElement.innerText = time;
     highScoreElement.innerText = highScore;
