@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const board = document.querySelector(".board");
 const startButton = document.querySelector(".btn-start");
 const modal = document.querySelector(".modal");
