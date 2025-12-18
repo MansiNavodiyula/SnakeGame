@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --bg-primary-color: #0c0c0c;
+    --bg-white-color: #ffffff;
+    --bg-fill-color: rgb(31, 243, 31);
+    --bg-food-color: rgb(99, 39, 238);
+    --text-primary-color: #f0f0f0;
+    --border-primary-color: #333333;
+}
+
+html {
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    font-family: system-ui, sans-serif;
+}
+
+main, section {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    padding: 8px 16px;
+    border: 1px solid var(--border-primary-color);
+    border-radius: 8px;
+}
+
+/* ===== BOARD (DESKTOP BEHAVIOR — ORIGINAL) ===== */
+.board {
+    flex-grow: 1;
+    /* border: 1px solid var(--border-primary-color); */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+}
+
+.block {
+    border: 1px solid var(--border-primary-color);
+    border-radius: 50%;
+}
+
+.fill {
+    background-color: var(--bg-fill-color);
+}
+
+.food {
+    background-color: var(--bg-food-color);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-game,
+.game-over {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.game-over {
+    display: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--bg-fill-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ===== MOBILE OVERRIDE ONLY ===== */
+@media (max-width: 768px) {
+    section {
+        padding: 16px;
+    }
+
+    .infos {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .board {
+        grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));
+    }
+}
